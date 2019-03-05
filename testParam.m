@@ -12,9 +12,9 @@ defaultOmegad = 5e9;
 defaultZaux = 75;
 defalutLambda = 30e6;
 %% sweep cp
-cpIterate = linspace(1e-13,9e-13,9);
-note = "_Cp_about0.1pF";
-% cpIterate = linspace(1e-12,10e-12,10);
+cpIterate = linspace(0.8e-12,1e-12,9);
+note = "_Cp_around0.9pF";
+
 step = 0; % the step between different plot lines
 
 thisR = defaultR;
@@ -321,4 +321,3 @@ xlabel("freq/Hz")
 ylabel("reflection gain/dB")
 saveas(gcf,filedir + "/"+ sprintf("cp_%.4f"+"pF_r_%.4f"+"_omegad_%.4f"+"GHz"+"_lambda_%.4f"+"MHz",...
     thisCp/1e-12,thisR,thisOmegad/1e9,thisLambda/1e6) + ".jpg" );
-
