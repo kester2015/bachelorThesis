@@ -8,8 +8,7 @@ defaultFreq = linspace(-10e9, 10e9, 20000);
 
 defaultR = 50;
 defaultCp = 1e-12;
-defaultOmegad = 300e6; % detuning between pump and oscillator resonant freq
-defaultPumpFreq = 5e9; % pump freq
+defaultOmegad = ;
 defaultZaux = 75;
 defalutLambda = 30e6;
 

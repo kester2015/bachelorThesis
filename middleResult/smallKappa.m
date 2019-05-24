@@ -1,19 +1,4 @@
-% This is the code implementation of Eq(4a) of article: arXiv:1510.03065v2
-% Title: "Broadband parametric amplification with impedance engineering: 
-% Beyond the gain-bandwidth product"
-%
-% this script is based on the calculation of \chi11, which is realized in
-% the script called "chiMatrix.m"(the second return value is chi11)
-%
-
-function [gainResult] = gainInFreq(omega,varargin)
-    kappa = smallKappa(omega,varargin{:});
-    [~,chi11] = chiMatrix(omega,varargin{:});
-    transmission = arrayfun( @(a,b)a*b, kappa, chi11 );
-    reflection = 1 - transmission;
-    gainResult = abs(reflection).^2;
-end
-
+% This is a deprecated version
 function [kappaResult] = smallKappa( omega, varargin )
 %     ip = inputParser;
 %     ip.addParameter('r', 100, @isnumeric);
@@ -38,6 +23,7 @@ function [kappaResult] = smallKappa( omega, varargin )
     kappaResult = arrayfun(@(x)coeff / (x^2 + in.r^2 / alpha^2),omega);
 end
 
+% 
 % function [kappaResult] = smallKappa( omega, varargin )
 % %     ip = inputParser;
 % %     ip.addParameter('r', 100, @isnumeric);

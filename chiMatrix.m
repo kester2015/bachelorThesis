@@ -24,13 +24,13 @@ function [varargout] = chiMatrix(omega,varargin)
 %     if not(mod(nargin,2)) % if omegad' is given, then
 
     in = parseInput(varargin{:});    
-    lambda = in.lambda;    
+    lambda = in.lambda;
     omegadPrime = in.omegad - 2 * lambda;
 
-    chiInverse11 = arrayfun(@(x)x-omegadPrime-bigSigma(x,varargin{:}),omega);
+    chiInverse11 = arrayfun(@(x)-1i*( x-omegadPrime-bigSigma(x,varargin{:}) ),omega);
     chiInverse12 = arrayfun(@(x)lambda, omega);
     chiInverse21 = arrayfun(@(x)lambda, omega);
-    chiInverse22 = arrayfun(@(x)x+omegadPrime-bigSigma(x,varargin{:}),omega);
+    chiInverse22 = arrayfun(@(x)-1i*( x+omegadPrime-bigSigma(x,varargin{:}) ),omega);
 
     chiResult = arrayfun(@(a,b,c,d)inv([a,b;c,d]),...
         chiInverse11,chiInverse12,chiInverse21,chiInverse22,...
