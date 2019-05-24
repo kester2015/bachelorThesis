@@ -16,11 +16,11 @@ clear
 warning('off');
 thisFreq = linspace(-10e9, 10e9, 2000);
 
-RIterate = []% linspace(10,150,15);
-CpIterate = []% linspace(0.1e-12,10e-12,5);
-ZauxIterate = []% linspace(10, 1000, 20);
-OmegadIterate = [];% linspace(100e6,1000e6,10);
-LambdaIterate = [];%500e6; %linspace(100e6,5e9,10);
+RIterate = [1,5,linspace(10,50,5),100]% linspace(10,150,15);
+CpIterate = [0.01e-12, 0.1e-12, 1e-12,1.2e-12, 3e-12, 5e-12, 10e-12, 50e-12, 100e-12]% linspace(0.1e-12,10e-12,5);
+ZauxIterate = [1,5,linspace(10,100,10),200,300,500,1000,10000]% linspace(10, 1000, 20);
+OmegadIterate = [100e6, 500e6, 1000e6];% linspace(100e6,1000e6,10);
+LambdaIterate = [100e6, 500e6, 1000e6];%500e6; %linspace(100e6,5e9,10);
 % 
 % thisR = 20;
 % thisCp = 1.2e-12;
@@ -29,7 +29,7 @@ thisPumpFreq = 5e9;
 % thisZaux = 300;
 % thisLambda = 500e6;
 
-filedir = "overnight_debug_"+date;
+filedir = "overnight_"+date;
 Rii = 0;
 Cpii = 0;
 Zauxii = 0;
