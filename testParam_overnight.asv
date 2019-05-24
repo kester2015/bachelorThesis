@@ -16,11 +16,11 @@ clear
 warning('off');
 thisFreq = linspace(-10e9, 10e9, 2000);
 
-RIterate = []% linspace(10,150,15);
-CpIterate = []% linspace(0.1e-12,10e-12,5);
-ZauxIterate = []% linspace(10, 1000, 20);
-OmegadIterate = [];% linspace(100e6,1000e6,10);
-LambdaIterate = [];%500e6; %linspace(100e6,5e9,10);
+RIterate = linspace(10,150,15);
+CpIterate = linspace(0.1e-12,20e-12,5);
+ZauxIterate = linspace(10, 1000, 20);
+OmegadIterate = linspace(100e6,1000e6,10);
+LambdaIterate = 500e6; %linspace(100e6,5e9,10);
 % 
 % thisR = 20;
 % thisCp = 1.2e-12;

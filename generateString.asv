@@ -1,0 +1,5 @@
+function s = generateString(varargin)
+    in = parseInput(varargin{:});
+    s = sprintf("cp_%.2f"+"pF_r_%.2f"+"¦¸_omegad_%.2f"+"MHz_zaux_%.2f"+"_lambda_%.2f"+"MHz"+"_pumpFreq_%.2f"+"GHz",...
+                            in.cp/1e-12,in.r,in.omegad/1e6,in.zaux,in.lambda/1e6,in.pumpFreq/1e9);
+end
